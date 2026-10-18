@@ -1,7 +1,7 @@
 import { site } from "@/content/site";
 import type { SiteState } from "@/lib/date";
 import { optionalSections, type Media } from "@/lib/sections";
-import { Envelope, envelopeSkipScript } from "@/components/ui/Envelope";
+import { Envelope } from "@/components/ui/Envelope";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 import { Navbar, type NavLink } from "@/components/sections/Navbar";
@@ -46,7 +46,6 @@ export function HomePage({ state, media = site.media, demo = false }: { state: S
     <>
       {showEnvelope && (
         <>
-          <script dangerouslySetInnerHTML={{ __html: envelopeSkipScript }} />
           <noscript>
             <style>{"#enveloppe{display:none!important}html{overflow:auto!important}#accueil,#accueil *{animation-play-state:running!important}"}</style>
           </noscript>

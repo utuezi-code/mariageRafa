@@ -28,7 +28,7 @@ export function SmoothScroll() {
       idle = hasIdle ? window.requestIdleCallback(start, { timeout: 2500 }) : setTimeout(start, 1200);
     };
     // Enveloppe encore fermée : Lenis ne démarre qu'une fois l'invitation ouverte
-    const waiting = !!document.getElementById("enveloppe") && document.documentElement.dataset.env !== "skip";
+    const waiting = !!document.getElementById("enveloppe");
     if (waiting) window.addEventListener(ENVELOPE_OPENED, schedule, { once: true });
     else schedule();
 

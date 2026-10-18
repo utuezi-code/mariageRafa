@@ -503,15 +503,12 @@ html.lenis body {
 /* ------------------------------------------------------------------ */
 
 /* Tant que l'enveloppe est fermée : page figée, animations du hero en attente */
-:root:not([data-env="skip"]):has(#enveloppe:not([data-state="revealing"])) {
+:root:has(#enveloppe:not([data-state="revealing"])) {
   overflow: hidden;
 }
-:root:not([data-env="skip"]):has(#enveloppe:not([data-state="revealing"])) #accueil *,
-:root:not([data-env="skip"]):has(#enveloppe:not([data-state="revealing"])) #accueil {
+:root:has(#enveloppe:not([data-state="revealing"])) #accueil *,
+:root:has(#enveloppe:not([data-state="revealing"])) #accueil {
   animation-play-state: paused !important;
-}
-[data-env="skip"] #enveloppe {
-  display: none;
 }
 
 .env-overlay {

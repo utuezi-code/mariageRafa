@@ -12,7 +12,7 @@ Next.js 15 · Tailwind CSS v4 · Framer Motion · Lenis · Prisma + PostgreSQL (
 
 | Moment | Ce que voit l'invité |
 |---|---|
-| **Enveloppe d'ouverture** | Une enveloppe de velours violet, doublée d'un motif à 8 branches en feuille d'or, scellée d'un **sceau de cire doré A&A**. L'invité touche le sceau : il se brise en deux, le rabat se soulève en 3D, la carte glisse hors de l'enveloppe, puis l'écran s'efface sur le hero. Une seule fois par visite (le bouton « Passer » permet de l'écourter). |
+| **Enveloppe d'ouverture** | Une enveloppe de velours violet, doublée d'un motif à 8 branches en feuille d'or, scellée d'un **sceau de cire doré A&A**. L'invité touche le sceau : il se brise en deux, le rabat se soulève en 3D, la carte glisse hors de l'enveloppe, puis l'écran s'efface sur le hero. Elle revient à chaque chargement ou rafraîchissement de la page (le bouton « Passer » permet de l'écourter). |
 | **Lien personnalisé** | `https://…/?pour=Famille%20Traoré` affiche « Pour Famille Traoré » au-dessus de l'enveloppe et **pré-remplit le nom** dans le formulaire RSVP. |
 | **Hero** | Arche d'ogive tracée en or, monogramme A&A qui se dessine, prénoms révélés lettre par lettre, poussière d'or qui s'élève, roses au trait qui se dessinent en coin. |
 | **Compte à rebours** | Chiffres sur rouleaux qui glissent à chaque seconde. |
@@ -133,7 +133,7 @@ La photo du hero apparaît dans l'arche d'ogive, avec un dégradé violet nuit, 
 | `/?preview=apres` | après : « Merci d'avoir partagé ce jour avec nous », RSVP masqué, galerie en avant, pas d'enveloppe |
 | `/?preview=demo` | avant + visuels de démonstration (hero avec photo, galerie) |
 
-Pour revoir l'enveloppe après l'avoir ouverte : fermez l'onglet (elle est mémorisée pour la session) ou ouvrez une fenêtre privée.
+Pour revoir l'enveloppe après l'avoir ouverte : rafraîchissez simplement la page.
 
 ## 8. Liens personnalisés
 

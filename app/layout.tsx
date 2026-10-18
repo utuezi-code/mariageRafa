@@ -58,8 +58,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // suppressHydrationWarning : l'attribut data-env est posé avant l'hydratation (enveloppe déjà ouverte)
-    <html lang="fr" className={`${cormorant.variable} ${manrope.variable} ${amiri.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={`${cormorant.variable} ${manrope.variable} ${amiri.variable}`}>
       <body>
         <Providers>{children}</Providers>
       </body>

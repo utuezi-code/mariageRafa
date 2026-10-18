@@ -12,12 +12,11 @@ import { Monogram } from "./Monogram";
 type State = "closed" | "opening" | "revealing" | "gone";
 
 export const ENVELOPE_OPENED = "enveloppe:ouverte";
-const SESSION_KEY = "aa-enveloppe";
 
 /**
  * Écran d'ouverture : une enveloppe de velours scellée à la cire.
  * Toucher le sceau le brise, le rabat se soulève, la carte glisse hors de l'enveloppe,
- * puis l'écran s'efface sur le hero. Une seule fois par session (sessionStorage).
+ * puis l'écran s'efface sur le hero. Elle revient à chaque chargement de la page.
  */
 export function Envelope() {
   const [state, setState] = useState<State>("closed");
@@ -27,7 +26,9 @@ export function Envelope() {
 
   useEffect(() => {
     setGuest(guestFromUrl());
-    if (document.documentElement.dataset.env === "skip") finish(false);
+    // Au rafraîchissement, le navigateur ne restaure pas la position : on repart du haut, sous l'enveloppe
+    history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
     const t = timers.current;
     return () => t.forEach(clearTimeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,13 +40,8 @@ export function Envelope() {
     document.querySelectorAll<HTMLElement>("body > header, main, body > footer").forEach((el) => (el.inert = hidden));
   }, [state]);
 
-  function finish(remember = true) {
+  function finish() {
     setState("gone");
-    if (remember) {
-      try {
-        sessionStorage.setItem(SESSION_KEY, "1");
-      } catch {}
-    }
     window.dispatchEvent(new Event(ENVELOPE_OPENED));
     const hash = window.location.hash.slice(1);
     if (hash) document.getElementById(hash)?.scrollIntoView();
@@ -135,6 +131,3 @@ export function Envelope() {
     </div>
   );
 }
-
-/** Script inline : saute l'enveloppe avant l'affichage si elle a déjà été ouverte (ou lien vers une ancre). */
-export const envelopeSkipScript = `try{if(sessionStorage.getItem("${SESSION_KEY}")||location.hash.length>1)document.documentElement.dataset.env="skip"}catch(e){}`;
