@@ -285,7 +285,7 @@ export const site = {
   },
 
   gallery: {
-    enabled: false,
+    enabled: true,
     title: "Galerie",
     close: "Fermer",
     previous: "Photo précédente",
@@ -310,9 +310,17 @@ export const site = {
   /* ---------------------------------------------------------------- */
 
   media: {
-    hero: null as SiteImage | null, // { src: "/images/hero.webp", alt: "…", width, height, blurDataURL }
+    hero: { src: "/images/couple-studio-debout.webp", alt: "Adama et Aïcha en tenues traditionnelles violettes, en studio", width: 863, height: 1080,
+      blurDataURL: "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABQAgCdASoNABAAA4BaJYgCw7YwTmp6zlvRmYAA/uc/eFdqqt12QZ5SuBOBYcFQcaet9Q4F5zjBqMWaKnmJcqc7XACaySCu4bJ7ZUt8Q2CLNymeXvTLBBjtp9k5xwAA" } as SiteImage | null,
     story: null as SiteImage | null,
-    gallery: [] as SiteImage[],
+    gallery: [
+      { src: "/images/couple-studio-mains.webp", alt: "Adama et Aïcha assis main dans la main, en tenues violettes", width: 1080, height: 719,
+      blurDataURL: "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAAsAA4BaJZACdAD1kvbW47kgAP7e5uoFRSYojiUkXFG6YVXHrGKF5T1Hz/eZgduAA+a7YhCdVDcuEosQmEYtxGbUpLHfFJdpZwTy5inOyPqqugAAAA==" },
+      { src: "/images/couple-plage.webp", alt: "Adama et Aïcha enlacés au bord de la mer", width: 810, height: 1080,
+      blurDataURL: "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoMABAAA4BaJQBOgCLOBZTRyQAA/uq7HvxDl9pDFtqe65/3ETvLlpcJDHHZUh6Mt/OaTCM4kR+kPCLRsr/Y7Z9I38z0LSFuOdBn/ckZulkcVR+WKI3K0jQA" },
+      { src: "/images/couple-studio-debout.webp", alt: "Adama et Aïcha en tenues traditionnelles violettes, en studio", width: 863, height: 1080,
+      blurDataURL: "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABQAgCdASoNABAAA4BaJYgCw7YwTmp6zlvRmYAA/uc/eFdqqt12QZ5SuBOBYcFQcaet9Q4F5zjBqMWaKnmJcqc7XACaySCu4bJ7ZUt8Q2CLNymeXvTLBBjtp9k5xwAA" },
+    ] as SiteImage[],
     ogImage: null as SiteImage | null, // sinon image générée avec le monogramme
   },
 };
