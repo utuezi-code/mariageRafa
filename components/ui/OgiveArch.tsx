@@ -10,6 +10,11 @@ const ARCH_INNER = "M5 150 L5 60 C5 35 26 18 50 8 C74 18 95 35 95 60 L95 150";
 /** Même forme normalisée 0..1 pour le masque des photos */
 const ARCH_CLIP = "M0.01 1 L0.01 0.387 C0.01 0.2 0.24 0.08 0.5 0.007 C0.76 0.08 0.99 0.2 0.99 0.387 L0.99 1 Z";
 
+/** Voile sombre : opaque au-dessus de la photo décalée, plus léger au centre, profond en bas. */
+const night = (pct: number) => `color-mix(in srgb, var(--color-night) ${pct}%, transparent)`;
+const archGradient = (offset: number) =>
+  `linear-gradient(to bottom, ${night(100)} ${offset}%, ${night(60)} ${offset + 14}%, ${night(50)} 55%, ${night(92)} 100%)`;
+
 /**
  * Cadre en arche dessiné en filet or. Si `image` est fournie, la photo apparaît dans l'arche
  * avec un dégradé sombre pour la lisibilité. Sinon : arche vide + halo, aucun placeholder.
@@ -42,18 +47,25 @@ export function OgiveArch({
       </svg>
 
       {image ? (
-        <div className="absolute inset-0" style={{ clipPath: `url(#${clipId})` }}>
+        <div className="absolute inset-0 bg-night" style={{ clipPath: `url(#${clipId})` }}>
+          <div className="absolute inset-x-0 bottom-0" style={{ top: `${image.archOffset ?? 0}%` }}>
           <Image
             src={image.src}
             alt={image.alt}
             fill
             priority={priority}
             sizes="(min-width: 768px) 560px, 92vw"
-            className="object-cover"
+            className="object-cover object-top"
             placeholder={image.blurDataURL ? "blur" : "empty"}
             blurDataURL={image.blurDataURL}
           />
-          {overlay && <div className="absolute inset-0 bg-gradient-to-b from-night/30 via-night/55 to-night/90" />}
+          </div>
+          {overlay && (
+            <div
+              className="absolute inset-0"
+              style={{ background: archGradient(image.archOffset ?? 0) }}
+            />
+          )}
         </div>
       ) : null}
 

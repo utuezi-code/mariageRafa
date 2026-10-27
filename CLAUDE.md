@@ -1,6 +1,6 @@
 # CLAUDE.md — Site de mariage A&A
 
-Site d'invitation de mariage privé pour **Gansoré Adama & Sirima Aïcha**, le **mardi 22 décembre 2026** à Abidjan.
+Site d'invitation de mariage privé pour **Gansoré Adama & Sirima Aïcha**, le **jeudi 24 décembre 2026** à Abidjan.
 
 Lis ces trois fichiers avant d'écrire du code :
 1. `CLAUDE.md` (ce fichier) : stack, règles, workflow
@@ -65,7 +65,7 @@ programme: [],   // [{ time: "08:00", label: "...", icon: "mosque" }]
 - Quand `time` ou `place` vaut `null`, la carte affiche « Horaire et lieu communiqués prochainement » avec un style soigné, sans trou ni texte « null ».
 - Quand `programme` est vide, la section Programme affiche un état élégant « Le programme détaillé sera dévoilé très bientôt » au lieu de la timeline.
 - Le fichier `.ics` et les liens Maps ne sont générés que pour les événements complets.
-- La cible du compte à rebours est la première heure connue du 22/12/2026. À défaut, c'est `2026-12-22T08:00:00Z`, réglable dans `content/site.ts`.
+- La cible du compte à rebours est la première heure connue du 24/12/2026. À défaut, c'est `2026-12-24T08:00:00Z`, réglable dans `content/site.ts`.
 
 ## Photos (ajoutées plus tard)
 

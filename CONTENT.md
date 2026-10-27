@@ -10,7 +10,7 @@
 - **Mariée :** Sirima Aïcha
 - **Prénoms d'affichage :** Adama & Aïcha (`TODO_MARIES` : à confirmer, ou surnoms)
 - **Monogramme :** A&A
-- **Date :** mardi 22 décembre 2026 (`TODO_MARIES` : confirmer que la date et le jour sont exacts)
+- **Date :** jeudi 24 décembre 2026 (confirmée par les mariés)
 - **Ville :** Abidjan
 - **Fuseau :** Africa/Abidjan (UTC+0)
 - **Couleurs :** violet nuit, violet royal, or antique, or champagne, gris perle
@@ -23,8 +23,8 @@
 - **Verset ou citation :** `TODO_MARIES` (optionnel)
 - **Titre :** Nous nous marions
 - **Noms :** Gansoré Adama & Sirima Aïcha
-- **Date :** Mardi 22 décembre 2026
-- **Compte à rebours :** jusqu'au 22/12/2026, à l'heure du premier événement (par défaut 08 h 00)
+- **Date :** Jeudi 24 décembre 2026
+- **Compte à rebours :** jusqu'au 24/12/2026, à l'heure du premier événement (par défaut 08 h 00)
 - **Bouton :** Confirmer ma présence
 - **Mention :** Merci de ne pas partager ce lien.
 
@@ -33,7 +33,7 @@
 ## Section 2 — Invitation
 
 - **Titre :** Nous nous disons Oui
-- **Texte (PROPOSITION) :** Adama & Aïcha ont la joie de vous inviter à célébrer leur union le mardi 22 décembre 2026.
+- **Texte (PROPOSITION) :** Adama & Aïcha ont la joie de vous inviter à célébrer leur union le jeudi 24 décembre 2026.
 
 ### Événements (ordre, horaires et lieux à définir)
 
@@ -73,7 +73,7 @@
 
 - A&A
 - Adama & Aïcha
-- 22.12.2026
+- 24.12.2026
 
 ---
 

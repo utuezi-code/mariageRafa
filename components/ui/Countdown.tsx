@@ -31,7 +31,7 @@ function Digit({ value }: { value: number | null }) {
   );
 }
 
-/** Compte à rebours vers la première heure connue du 22/12/2026 (heure d'Abidjan = UTC). */
+/** Compte à rebours vers la première heure connue du 24/12/2026 (heure d'Abidjan = UTC). */
 export function Countdown({ forceToday = false }: { forceToday?: boolean }) {
   const [now, setNow] = useState<number | null>(null);
 

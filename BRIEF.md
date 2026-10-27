@@ -56,7 +56,7 @@ Menu fixe, transparent sur le hero, qui passe à `night/80` avec flou au scroll.
 - « Nous nous marions »
 - **Adama** / **& Aïcha** en très grand, avec les noms complets en petites capitales en dessous
 - Le monogramme A&A
-- « Mardi 22 décembre 2026 »
+- « Jeudi 24 décembre 2026 »
 - Le compte à rebours
 - Le CTA **« Confirmer ma présence »** (or plein, texte `night`)
 - La mention « Merci de ne pas partager ce lien »
@@ -86,12 +86,12 @@ Le bandeau est masqué tant que le dress code n'est pas fourni.
 Notre histoire, Galerie (masonry et lightbox), Liste de cadeaux, FAQ.
 
 ### 6.7 Footer (fond `night`)
-Le monogramme, « Adama & Aïcha » et « 22.12.2026 » en or. Pas de branding tiers.
+Le monogramme, « Adama & Aïcha » et « 24.12.2026 » en or. Pas de branding tiers.
 
 ## 7. États du site
 
 1. **Programme à venir :** les événements et le programme incomplets s'affichent en mode « prochainement ».
-2. **Avant le 22/12 :** le compte à rebours et le RSVP sont actifs.
+2. **Avant le 24/12 :** le compte à rebours et le RSVP sont actifs.
 3. **Jour J :** le compte à rebours affiche « C'est aujourd'hui » et l'étape en cours est mise en évidence.
 4. **Après :** le hero affiche « Merci d'avoir partagé ce jour avec nous », le RSVP est masqué et la galerie est mise en avant.
 
@@ -105,7 +105,7 @@ Un paramètre `?preview=avant|jourj|apres` permet de tester chaque état.
 
 - `noindex, nofollow`.
 - Image OG 1200×630 via `next/og` : fond `night` velours, monogramme or, prénoms, date. C'est l'aperçu WhatsApp, il doit être superbe.
-- Titre : « Adama & Aïcha — 22 décembre 2026 »
+- Titre : « Adama & Aïcha — 24 décembre 2026 »
 - Description : « Nous nous marions. Vous êtes invités à célébrer notre union. »
 
 ## 10. Critères d'acceptation

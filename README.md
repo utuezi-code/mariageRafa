@@ -1,6 +1,6 @@
 # A&A — Site de mariage
 
-Site d'invitation privé de **Gansoré Adama & Sirima Aïcha**, le **mardi 22 décembre 2026** à Abidjan.
+Site d'invitation privé de **Gansoré Adama & Sirima Aïcha**, le **jeudi 24 décembre 2026** à Abidjan.
 
 Next.js 15 · Tailwind CSS v4 · Framer Motion · Lenis · Prisma + PostgreSQL (Neon) · Zod · hébergé sur Vercel.
 
@@ -30,7 +30,7 @@ Toutes ces valeurs sont dans **`content/site.ts`** (recherchez `TODO_MARIES`), s
 | # | Information | Où | Valeur actuelle |
 |---|---|---|---|
 | 1 | Prénoms d'affichage (ou surnoms) | `identity.groomFirstName`, `brideFirstName`, `displayNames` | Adama / Aïcha |
-| 2 | Confirmer la date et le jour | `identity.dateLong` | Mardi 22 décembre 2026 (le 22/12/2026 est bien un mardi) |
+| 2 | ~~Confirmer la date et le jour~~ ✓ confirmé | `identity.dateLong` | Jeudi 24 décembre 2026 |
 | 3 | Cérémonie religieuse : heure, lieu, adresse, lien Maps, dress code | `events[0]` | `null` → « Horaire et lieu communiqués prochainement » |
 | 4 | Mariage civil : heure, mairie, adresse, lien Maps, dress code | `events[1]` | `null` |
 | 5 | Réception (à confirmer) | `events[2]` puis `enabled: true` | masquée |
@@ -54,7 +54,7 @@ Toutes ces valeurs sont dans **`content/site.ts`** (recherchez `TODO_MARIES`), s
 | Texte | Où |
 |---|---|
 | Bismillah « بسم الله الرحمن الرحيم — Bismillah ar-Rahman ar-Rahim » en tête du hero | `hero.bismillah.enabled` (désactivé par défaut : passer à `true` pour l'afficher) |
-| « Adama & Aïcha ont la joie de vous inviter à célébrer leur union le mardi 22 décembre 2026. » | `invitation.text` |
+| « Adama & Aïcha ont la joie de vous inviter à célébrer leur union le jeudi 24 décembre 2026. » | `invitation.text` |
 | Date limite : 8 décembre 2026 | `rsvp.text` |
 | Clôture du programme : « Qu'Allah bénisse notre union et qu'Il vous comble de bienfaits. » | `programme.closing` (mettre `null` pour la masquer) |
 | Textes de l'enveloppe : « Pour », « Touchez le sceau pour ouvrir », « Ouvrir l'invitation », « Passer » | `envelope` (`enabled: false` pour supprimer l'enveloppe) |
@@ -83,7 +83,7 @@ Tout se fait dans `content/site.ts`, sans toucher aux composants.
 
 - L'**ordre** d'affichage est celui du tableau : déplacez un bloc pour changer l'ordre.
 - Dès que `time` **et** `place` sont renseignés, la carte affiche « Itinéraire » (si `mapsUrl`) et « Ajouter au calendrier ».
-- Le **compte à rebours** vise automatiquement la première heure connue du 22/12 (par défaut 08 h 00).
+- Le **compte à rebours** vise automatiquement la première heure connue du 24/12 (par défaut 08 h 00).
 - Programme : `steps: [{ time: "08:00", label: "Cérémonie religieuse", icon: "mosque" }, …]` (icônes : mosque, landmark, rings, camera, utensils, cake, music, car, sparkles). Le jour J, l'étape en cours est mise en évidence.
 
 **Depuis GitHub sans rien installer :** ouvrez `content/site.ts` → icône crayon → modifiez **entre les guillemets** → « Commit changes ». Vercel remet le site à jour en 1 à 2 minutes.

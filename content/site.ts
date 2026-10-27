@@ -17,6 +17,8 @@ export type SiteImage = {
   width: number;
   height: number;
   blurDataURL?: string; // généré par `npm run optimize-images`
+  /** Arche : décale la photo vers le bas (en % de la hauteur) ; le haut de l'arche reste sombre. */
+  archOffset?: number;
 };
 
 export type Verse = { text: string; reference: string };
@@ -68,19 +70,19 @@ export const site = {
     groomFirstName: "Adama",
     brideFirstName: "Aïcha",
     displayNames: "Adama & Aïcha",
-    // TODO_MARIES — confirmer que la date et le jour sont exacts
-    dateLong: "Mardi 22 décembre 2026",
-    dateShort: "22.12.2026",
+    // Date confirmée par les mariés
+    dateLong: "Jeudi 24 décembre 2026",
+    dateShort: "24.12.2026",
     city: "Abidjan",
     timezone: "Africa/Abidjan",
     /** Jour du mariage (date locale Abidjan = UTC) */
-    weddingDay: "2026-12-22",
+    weddingDay: "2026-12-24",
     /** Cible du compte à rebours si aucun horaire n'est encore connu (sinon : première heure connue) */
-    countdownFallback: "2026-12-22T08:00:00Z",
+    countdownFallback: "2026-12-24T08:00:00Z",
   },
 
   meta: {
-    title: "Adama & Aïcha — 22 décembre 2026",
+    title: "Adama & Aïcha — 24 décembre 2026",
     description: "Nous nous marions. Vous êtes invités à célébrer notre union.",
   },
 
@@ -132,7 +134,7 @@ export const site = {
   invitation: {
     title: "Nous nous disons Oui",
     // PROPOSITION
-    text: "Adama & Aïcha ont la joie de vous inviter à célébrer leur union le mardi 22 décembre 2026.",
+    text: "Adama & Aïcha ont la joie de vous inviter à célébrer leur union le jeudi 24 décembre 2026.",
     pending: "Horaire et lieu communiqués prochainement.",
     labels: {
       time: "Heure",
@@ -246,7 +248,7 @@ export const site = {
   footer: {
     monogram: "A&A",
     names: "Adama & Aïcha",
-    date: "22.12.2026",
+    date: "24.12.2026",
   },
 
   admin: {
@@ -310,7 +312,7 @@ export const site = {
   /* ---------------------------------------------------------------- */
 
   media: {
-    hero: { src: "/images/couple-studio-debout.webp", alt: "Adama et Aïcha en tenues traditionnelles violettes, en studio", width: 863, height: 1080,
+    hero: { src: "/images/couple-studio-debout.webp", alt: "Adama et Aïcha en tenues traditionnelles violettes, en studio", width: 863, height: 1080, archOffset: 18,
       blurDataURL: "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABQAgCdASoNABAAA4BaJYgCw7YwTmp6zlvRmYAA/uc/eFdqqt12QZ5SuBOBYcFQcaet9Q4F5zjBqMWaKnmJcqc7XACaySCu4bJ7ZUt8Q2CLNymeXvTLBBjtp9k5xwAA" } as SiteImage | null,
     story: null as SiteImage | null,
     gallery: [

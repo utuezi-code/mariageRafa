@@ -39,23 +39,32 @@ export function Gallery({ images }: { images: SiteImage[] }) {
       <GeometricPattern id="pattern-gallery" opacity={0.05} />
       <div className="relative z-[2] mx-auto max-w-6xl">
         <SectionTitle title={g.title} />
-        <div className="mt-14 columns-2 gap-3 md:columns-3 md:gap-5">
-          {images.map((img, i) => (
-            <Reveal key={img.src} delay={(i % 3) * 0.08} className="mb-3 break-inside-avoid md:mb-5">
-              <button type="button" onClick={() => setIndex(i)} className="group block w-full overflow-hidden" aria-label={img.alt}>
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  sizes="(min-width: 768px) 33vw, 50vw"
-                  placeholder={img.blurDataURL ? "blur" : "empty"}
-                  blurDataURL={img.blurDataURL}
-                  className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-              </button>
-            </Reveal>
-          ))}
+        {/* Grille alignée : les photos en paysage occupent deux colonnes, les portraits une seule. */}
+        <div className="mt-14 grid grid-flow-row-dense grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+          {images.map((img, i) => {
+            const landscape = img.width > img.height;
+            return (
+              <Reveal key={img.src} delay={(i % 4) * 0.08} className={landscape ? "col-span-2" : "col-span-1"}>
+                <button
+                  type="button"
+                  onClick={() => setIndex(i)}
+                  className={`group relative block h-full w-full overflow-hidden ${landscape ? "aspect-[8/5]" : "aspect-[4/5]"}`}
+                  aria-label={img.alt}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes={landscape ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
+                    placeholder={img.blurDataURL ? "blur" : "empty"}
+                    blurDataURL={img.blurDataURL}
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <span aria-hidden="true" className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-gold/25" />
+                </button>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
 
